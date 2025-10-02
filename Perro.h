@@ -1,47 +1,51 @@
-//
-// Created by lufe and Gonzo.
-//
-
-#ifndef INC_1_CLASEOBJETO_PERRO_H
-#define INC_1_CLASEOBJETO_PERRO_H
+#ifndef PERRO_H
+#define PERRO_H
 
 #include <string>
 #include <iostream>
+#include "Raza.h"
+#include "Veterinario.h"
+
 using namespace std;
 
 class Perro {
-
-public:
+private:
     string nombre;
     string color;
     int edad;
     string tamanio;
-    string raza;
+    Raza* razaPtr;
+    Veterinario* vetPtr; // nuevo: puntero al veterinario tratante
 
 public:
+    Perro() : nombre(""), color(""), edad(0), tamanio(""), razaPtr(nullptr), vetPtr(nullptr) {}
+
     void ladrar();
     void saludar();
-    void alimentar ();
+    void alimentar();
 
+    // getters / setters básicos
+    void setNombre(string n) { nombre = n; }
+    string getNombre() { return nombre; }
 
-    /* pedazdo del segundo ejercicio, me tiene que dar error obligatoriamente
-
-    void setNombre(const string &n) { nombre = n; }
-    string getNombre() const { return nombre; }
-
-    void setColor(const string &c) { color = c; }
-    string getColor() const { return color; }
+    void setColor(string c) { color = c; }
+    string getColor() { return color; }
 
     void setEdad(int e) { edad = e; }
-    int getEdad() const { return edad; }
+    int getEdad() { return edad; }
 
-    void setTamanio(const string &t) { tamanio = t; }
-    string getTamanio() const { return tamanio; }
+    void setTamanio(string t) { tamanio = t; }
+    string getTamanio() { return tamanio; }
 
-    void setRaza(const string &r) { raza = r; }
-    string getRaza() const { return raza; }
-    */
+    // Raza (asociación)
+    void setRaza(Raza* r) { razaPtr = r; }
+    Raza* getRaza() { return razaPtr; }
+    void mostrarRaza();
 
+    // Veterinario (asociación)
+    void setVeterinario(Veterinario* v) { vetPtr = v; }
+    Veterinario* getVeterinario() { return vetPtr; }
+    void mostrarVeterinario();
 };
 
-#endif //INC_1_CLASEOBJETO_PERRO_H
+#endif // PERRO_H
