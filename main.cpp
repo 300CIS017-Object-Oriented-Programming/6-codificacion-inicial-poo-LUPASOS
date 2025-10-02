@@ -1,31 +1,47 @@
 #include <iostream>
+#include "Raza.h"
+#include "Veterinario.h"
 #include "Perro.h"
+using namespace std;
 
 int main() {
+    // crear razas
+    Raza mastin("Mastin Napolitano", "Italia");
+    Raza maltes("Maltes", "Italia");
 
-    std::cout << "Hello, World!" << std::endl;
+    // crear veterinarios
+    Veterinario drPerez("Dr. Perez", 12);
+    Veterinario draLopez("Dra. Lopez", 5);
 
-    // Instanciar
+    // crear perros
     Perro firulais;
-    firulais.nombre = "Firulais";
-    firulais.color = "Negro";
-    firulais.edad = 5;
-    firulais.tamanio = "Grande";
-    firulais.raza = "Mastin napolitano";
-
-    std::cout << "Que ladre" << std::endl;
-    firulais.ladrar();
-    firulais.saludar("miercoles");
-
+    firulais.setNombre("Firulais");
+    firulais.setColor("Negro");
+    firulais.setEdad(5);
+    firulais.setTamanio("Grande");
+    firulais.setRaza(&mastin);
 
     Perro luna;
-    luna.nombre = "Luna";
-    luna.color = "Blanco";
-    luna.edad = 2;
-    luna.tamanio = "Pequeno";
+    luna.setNombre("Luna");
+    luna.setColor("Blanco");
+    luna.setEdad(2);
+    luna.setTamanio("Pequeno");
+    luna.setRaza(&maltes);
 
-    std::cout << "Que ladre" << std::endl;
+    // asociar veterinarios
+    firulais.setVeterinario(&drPerez);
+    luna.setVeterinario(&draLopez);
+
+    // probar
+    firulais.ladrar();
+    firulais.mostrarRaza();
+    firulais.mostrarVeterinario();
+
+    cout << "----" << endl;
+
     luna.ladrar();
+    luna.mostrarRaza();
+    luna.mostrarVeterinario();
 
     return 0;
 }
