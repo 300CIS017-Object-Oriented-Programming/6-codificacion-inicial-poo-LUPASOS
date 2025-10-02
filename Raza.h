@@ -14,7 +14,7 @@ public:
     Raza() : nombre(""), paisOrigen("") {}
     Raza(string n, string p) : nombre(n), paisOrigen(p) {}
 
-    // getters y setters sencillos
+    // getters y setters supuestamente sencillos
     void setNombre(string n) { nombre = n; }
     string getNombre() { return nombre; }
 
