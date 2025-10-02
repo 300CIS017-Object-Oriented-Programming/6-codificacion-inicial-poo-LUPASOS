@@ -1,9 +1,9 @@
 #include <iostream>
 #include "Perro.h"
-
+using namespace std;
 int main() {
 
-    std::cout << "Hello, World!" << std::endl;
+    std::cout << "Hello, World!" << endl;
 
     // Instanciar
     Perro firulais;
@@ -13,9 +13,10 @@ int main() {
     firulais.tamanio = "Grande";
     firulais.raza = "Mastin napolitano";
 
-    std::cout << "Que ladre" << std::endl;
+    cout << "Que ladre" << endl;
     firulais.ladrar();
-    firulais.saludar("miercoles");
+    firulais.saludar();
+    firulais.alimentar();
 
 
     Perro luna;
@@ -24,8 +25,10 @@ int main() {
     luna.edad = 2;
     luna.tamanio = "Pequeno";
 
-    std::cout << "Que ladre" << std::endl;
+    cout << "Que ladre" << endl;
     luna.ladrar();
+    luna.saludar();
+    luna.alimentar();
 
     return 0;
 }
