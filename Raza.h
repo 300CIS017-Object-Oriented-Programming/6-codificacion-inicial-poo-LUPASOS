@@ -7,11 +7,10 @@ using namespace std;
 class Raza {
 private:
     string nombre;
-    string PaisOrigen;
-
+    string paisOrigen;
 
 public:
-    // constructores simples, segun la ia
+    // constructores simples segun la ia, no lo tengo del to.do claro honestamente
     Raza() : nombre(""), paisOrigen("") {}
     Raza(string n, string p) : nombre(n), paisOrigen(p) {}
 
@@ -24,7 +23,3 @@ public:
 };
 
 #endif // RAZA_H
-
-
-
-
